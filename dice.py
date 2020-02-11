@@ -1,6 +1,6 @@
 from random import *
 from math import *
-rolls = int(input("Enter number of rolls: "))
+rolls = int(input("How many rolls? "))
 
 count1=0
 count2=0
@@ -24,8 +24,6 @@ while(x < rolls):
         count5 +=1
     elif(roll == 6):
         count6 +=1
-
-print("How many rolls? " + str(rolls))
 
 print("1: " + str(count1) + "/" + str(rolls) + " = " + str(trunc(count1/rolls*100)) + "%")
 print("2: " + str(count2) + "/" + str(rolls) + " = " + str(trunc(count2/rolls*100)) + "%")
