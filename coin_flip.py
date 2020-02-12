@@ -27,8 +27,9 @@ while i < numFlips:
     i += 1
 
 
-'''print(f"Heads = {countHeads} = {math.trunc(countHeads/numFlips*100)}%")
+print(f"Heads = {countHeads} = {math.trunc(countHeads/numFlips*100)}%")
 print(f"Tails = {countTails} = {math.trunc(countTails/numFlips*100)}%")
+'''
 
 i = 0
 while i < (numFlips - 1):
