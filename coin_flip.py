@@ -29,7 +29,8 @@ while i < numFlips:
 
 print(f"Heads = {countHeads} = {math.trunc(countHeads/numFlips*100)}%")
 print(f"Tails = {countTails} = {math.trunc(countTails/numFlips*100)}%")
-'''
+
+print(flips)
 
 i = 0
 while i < (numFlips - 1):
@@ -48,7 +49,7 @@ while i < (numFlips - 1):
 
 
 print(f"# of 2 heads in a row = {multipleHeads}")
-print(f"# of 2 tails in a row = {multipleTails}")'''
+print(f"# of 2 tails in a row = {multipleTails}")
 
 
 
