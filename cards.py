@@ -1,20 +1,14 @@
 #♠♥♣♦
 import random
-suits = ["♠","♥","♣","♦"]
+import sys
+s = ["♠","♥","♣","♦"]
 deck = []
 
 for i in range(4):
     for j in range(1,14):
         value = str(j)
-        if(j == 1):
-            value = "A"
-        if(j == 11):
-            value = "J"
-        elif(j == 12):
-            value = "Q"
-        elif(j == 13):
-            value = "K"
-        deck.append(f"{value}{suits[i]}")
+        f = {11:"J", 12:"Q", 13:"K", 1:"A"}
+        deck.append(f"{f[j] if j in f else j}{s[i]}")
 print("Sorted: ")
 print(deck)
 
@@ -25,9 +19,34 @@ def randomize (arr, n):
     return arr 
 n = len(deck)
 print("Shuffled: ")
-print(randomize(deck, n)) 
-                
+print(randomize(deck, n))
 
+s = {"♦":0, "♥":1, "♥":2, "♠":3}
+f = {"J":11, "Q":12, "K":13, "A":1}
+
+def selectionSort(arr):
+    f={"A":1,"J":11,"Q":12,"K":13}
+    n = len(arr)
+    for i in range(n): 
+        min_idx = i 
+        for j in range(i+1, len(arr)):
+            a = arr[min_idx]
+            b = arr[j]
+            aface  = a[0:len(a)-1]
+            asuit  = a[len(a)-1]
+            avalue = f[aface] if aface in f else int(aface)
+
+            bface  = b[0:len(b)-1]
+            bsuit  = b[len(b)-1]
+            bvalue = f[bface] if bface in f else int(bface)
+
+            if (asuit > bsuit or (asuit == bsuit and avalue > bvalue)):
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+  
+selectionSort(deck)
+print("Sorted: ")
+print(deck)
 
 
 
